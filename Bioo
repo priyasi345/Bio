@@ -1,0 +1,229 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled212.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyM+BpyROsK44lFh1srA7F9G",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/priyasi345/Bio/blob/master/Bioo\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nb46Yg8WapVE",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# DATA GATHERING USING API AND FURTHER PREDICTION FROM THAT DATA...\n",
+        "import requests"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "k3m7A-_EbyE7",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "result=requests.get('https://developer.nrel.gov/api/alt-fuel-stations/v1.json?fuel_type=E85,ELEC&state=CA&limit=2&api_key=7M1hw8M6ctPc5hdrhkBWd5mpiUmZlmfJp6Fg5tEh').json()"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XG1CfJGWcGc6",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 1000
+        },
+        "outputId": "975264a8-47bb-4d28-ac28-3788fb17a11d"
+      },
+      "source": [
+        "result"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'fuel_stations': [{'access_code': 'public',\n",
+              "   'access_days_time': 'Garage business hours; pay lot',\n",
+              "   'access_days_time_fr': None,\n",
+              "   'access_detail_code': None,\n",
+              "   'bd_blends': None,\n",
+              "   'bd_blends_fr': None,\n",
+              "   'cards_accepted': None,\n",
+              "   'city': 'Sacramento',\n",
+              "   'cng_dispenser_num': None,\n",
+              "   'cng_fill_type_code': None,\n",
+              "   'cng_psi': None,\n",
+              "   'cng_renewable_source': None,\n",
+              "   'cng_total_compression': None,\n",
+              "   'cng_total_storage': None,\n",
+              "   'cng_vehicle_class': None,\n",
+              "   'country': 'US',\n",
+              "   'date_last_confirmed': '2019-05-09',\n",
+              "   'e85_blender_pump': None,\n",
+              "   'e85_other_ethanol_blends': None,\n",
+              "   'ev_connector_types': ['NEMA520'],\n",
+              "   'ev_dc_fast_num': None,\n",
+              "   'ev_level1_evse_num': 2,\n",
+              "   'ev_level2_evse_num': None,\n",
+              "   'ev_network': 'Non-Networked',\n",
+              "   'ev_network_web': None,\n",
+              "   'ev_other_evse': '3 SP Inductive',\n",
+              "   'ev_pricing': None,\n",
+              "   'ev_pricing_fr': None,\n",
+              "   'ev_renewable_source': None,\n",
+              "   'expected_date': None,\n",
+              "   'facility_type': 'PAY_GARAGE',\n",
+              "   'fuel_type_code': 'ELEC',\n",
+              "   'geocode_status': 'GPS',\n",
+              "   'groups_with_access_code': 'Public',\n",
+              "   'groups_with_access_code_fr': 'Public',\n",
+              "   'hy_is_retail': None,\n",
+              "   'hy_pressures': None,\n",
+              "   'hy_standards': None,\n",
+              "   'hy_status_link': None,\n",
+              "   'id': 1498,\n",
+              "   'intersection_directions': 'At 10th and L, 2nd Level',\n",
+              "   'intersection_directions_fr': None,\n",
+              "   'latitude': 38.5783802,\n",
+              "   'lng_renewable_source': None,\n",
+              "   'lng_vehicle_class': None,\n",
+              "   'longitude': -121.4926,\n",
+              "   'lpg_nozzle_types': None,\n",
+              "   'lpg_primary': None,\n",
+              "   'ng_fill_type_code': None,\n",
+              "   'ng_psi': None,\n",
+              "   'ng_vehicle_class': None,\n",
+              "   'open_date': '2018-08-20',\n",
+              "   'owner_type_code': 'LG',\n",
+              "   'plus4': None,\n",
+              "   'state': 'CA',\n",
+              "   'station_name': 'City of Sacramento - Capitol Parking Garage',\n",
+              "   'station_phone': '888-758-4389  916-264-5011',\n",
+              "   'status_code': 'E',\n",
+              "   'street_address': '1015 L St',\n",
+              "   'updated_at': '2020-01-21T18:34:38Z',\n",
+              "   'zip': '95814'},\n",
+              "  {'access_code': 'private',\n",
+              "   'access_days_time': 'Fleet use only',\n",
+              "   'access_days_time_fr': None,\n",
+              "   'access_detail_code': None,\n",
+              "   'bd_blends': None,\n",
+              "   'bd_blends_fr': None,\n",
+              "   'cards_accepted': None,\n",
+              "   'city': 'Sun Valley',\n",
+              "   'cng_dispenser_num': None,\n",
+              "   'cng_fill_type_code': None,\n",
+              "   'cng_psi': None,\n",
+              "   'cng_renewable_source': None,\n",
+              "   'cng_total_compression': None,\n",
+              "   'cng_total_storage': None,\n",
+              "   'cng_vehicle_class': None,\n",
+              "   'country': 'US',\n",
+              "   'date_last_confirmed': '2020-01-13',\n",
+              "   'e85_blender_pump': None,\n",
+              "   'e85_other_ethanol_blends': None,\n",
+              "   'ev_connector_types': ['J1772'],\n",
+              "   'ev_dc_fast_num': None,\n",
+              "   'ev_level1_evse_num': None,\n",
+              "   'ev_level2_evse_num': 15,\n",
+              "   'ev_network': 'Non-Networked',\n",
+              "   'ev_network_web': None,\n",
+              "   'ev_other_evse': None,\n",
+              "   'ev_pricing': None,\n",
+              "   'ev_pricing_fr': None,\n",
+              "   'ev_renewable_source': None,\n",
+              "   'expected_date': None,\n",
+              "   'facility_type': 'UTILITY',\n",
+              "   'fuel_type_code': 'ELEC',\n",
+              "   'geocode_status': 'GPS',\n",
+              "   'groups_with_access_code': 'Private',\n",
+              "   'groups_with_access_code_fr': 'Privé',\n",
+              "   'hy_is_retail': None,\n",
+              "   'hy_pressures': None,\n",
+              "   'hy_standards': None,\n",
+              "   'hy_status_link': None,\n",
+              "   'id': 1517,\n",
+              "   'intersection_directions': None,\n",
+              "   'intersection_directions_fr': None,\n",
+              "   'latitude': 34.2483191527193,\n",
+              "   'lng_renewable_source': None,\n",
+              "   'lng_vehicle_class': None,\n",
+              "   'longitude': -118.387971374344,\n",
+              "   'lpg_nozzle_types': None,\n",
+              "   'lpg_primary': None,\n",
+              "   'ng_fill_type_code': None,\n",
+              "   'ng_psi': None,\n",
+              "   'ng_vehicle_class': None,\n",
+              "   'open_date': '1999-10-15',\n",
+              "   'owner_type_code': 'LG',\n",
+              "   'plus4': None,\n",
+              "   'state': 'CA',\n",
+              "   'station_name': 'LADWP - Truesdale Center',\n",
+              "   'station_phone': None,\n",
+              "   'status_code': 'E',\n",
+              "   'street_address': '11797 Truesdale St',\n",
+              "   'updated_at': '2020-01-21T18:34:38Z',\n",
+              "   'zip': '91352'}],\n",
+              " 'station_counts': {'fuels': {'BD': {'total': 0},\n",
+              "   'CNG': {'total': 0},\n",
+              "   'E85': {'total': 221},\n",
+              "   'ELEC': {'stations': {'total': 7102}, 'total': 29808},\n",
+              "   'HY': {'total': 0},\n",
+              "   'LNG': {'total': 0},\n",
+              "   'LPG': {'total': 0}},\n",
+              "  'total': 30029},\n",
+              " 'station_locator_url': 'http://www.afdc.energy.gov/afdc/locator/stations/',\n",
+              " 'total_results': 7323}"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "z-2FlMEhcPjJ",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
